@@ -7,7 +7,7 @@
  */
 int find_mul(int n, int i)
 {
-	if (i == 0)
+	if (i == n)
 	{
 		return (1);
 	}

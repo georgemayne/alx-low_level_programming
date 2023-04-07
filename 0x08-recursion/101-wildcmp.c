@@ -34,7 +34,7 @@ int str_check(char *str1, char *str2, int l, int r)
  *
  * Return: value 1 if  identical.
  */
-int chck_id(char *s1, char *s2)
+int wildcmp(char *s1, char *s2)
 {
 	return (str_check(s1, s2, 0, 0));
 }

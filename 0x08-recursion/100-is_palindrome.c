@@ -22,7 +22,7 @@ int _strlen_recursion(char *s)
 int palin_check(char *s, int r, int l)
 {
 	if (s[r] == s[l])
-		if (r > l /2)
+		if (r > l / 2)
 		{
 			return (1);
 		}

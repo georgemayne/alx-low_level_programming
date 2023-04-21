@@ -39,6 +39,7 @@ void print_all(const char * const format, ...)
 
 	default:
 	f++;
+	contine;
 	}
 
 	sep = ", ";

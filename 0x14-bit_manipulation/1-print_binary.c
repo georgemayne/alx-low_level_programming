@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * _power - calculate (base and power)
+ * _power - function that calculate base and power
  * @base: base
  * @pow: power
- * Return: value of base and power
+ * Return: Always
  */
 unsigned long int _power(unsigned int base, unsigned int pow)
 {

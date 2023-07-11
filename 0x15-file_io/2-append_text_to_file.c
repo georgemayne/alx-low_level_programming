@@ -1,15 +1,13 @@
-#include <stdlib.h>
-#include <string.h>
-#include "lists.h"
+#include "main.h"
 
 /**
  * _strlen - function that finds the length of a string
- * @str: length of string
- * Return: Always length of string
+ * @str: ptr to the str
+ * Return: Always length of the string
  */
-unsigned int _strlen(char *str)
+size_t _strlen(char *str)
 {
-	unsigned int g;
+	size_t g;
 
 	for (g = 0; str[g]; g++)
 		;
@@ -17,37 +15,25 @@ unsigned int _strlen(char *str)
 }
 
 /**
- * add_node_end - function that adds a new node to the end of linked list
- * @head: pointer to a linked list
- * @str: string to the new node
- * Return: Always pointer to the new node.
+ * append_text_to_file - function that appends a text at the end of a file.
+ * @filename: name of the file
+ * @text_content: NULL terminated str to add at the end of the file
+ * Return: Always 1 on success and -1 on failure
  */
-list_t *add_node_end(list_t **head, const char *str)
+int append_text_to_file(const char *filename, char *text_content)
 {
-	list_t *new, *tmp;
+	int fd;
+	ssize_t len;
 
-	if (str == NULL)
-		return (NULL);
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-		return (NULL);
-	new->str = strdup(str);
-	if (new->str == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
-	new->len = _strlen(new->str);
-	new->next = NULL;
-	if (*head == NULL)
-	{
-		*head = new;
-		return (new);
-	}
-	tmp = *head;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-	return (new);
+	if (filename == NULL)
+		return (-1);
+	fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd == -1)
+		return (-1);
+	if (text_content != NULL)
+		len = write(fd, text_content, _strlen(text_content));
+	close(fd);
+	if (len == -1)
+		return (-1);
+	return (1);
 }
-

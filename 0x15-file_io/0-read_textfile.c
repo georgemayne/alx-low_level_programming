@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - Function tha reads a text file and prints it to POSIX stdout.
+ * read_textfile - Function tha reads a text file and
+ * prints it to POSIX stdout.
  * @filename: name of the file.
  * @letters: letters the function should read and print
  * Return: Always 0.

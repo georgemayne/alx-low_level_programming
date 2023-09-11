@@ -1,7 +1,8 @@
 #include "hash_tables.h"
 
 /**
- * shash_table_create - function that creates a sorted hash table
+ * shash_table_create - function that creates
+ * a sorted hash table
  * @size: size of the hash table
  *
  * Return: pointer to the new table, or NULL on failure
@@ -31,7 +32,8 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * make_shash_node - function that makes a node for the sorted hash table
+ * make_shash_node - function that makes a node
+ * for the sorted hash table
  * @key: key for the data
  * @value: data to be stored
  *
@@ -62,7 +64,8 @@ shash_node_t *make_shash_node(const char *key, const char *value)
 }
 
 /**
- * add_to_sorted_list - function that add a node to the sorted (by key's ASCII) linked list
+ * add_to_sorted_list - function that add a node to the
+ * sorted (by key's ASCII) linked list
  * @table: the sorted hash table
  * @node: the node to add
  *
@@ -99,7 +102,8 @@ void add_to_sorted_list(shash_table_t *table, shash_node_t *node)
 }
 
 /**
- * shash_table_set - function that sets a key to a value in the hash table
+ * shash_table_set - function that sets a key to a value
+ * in the hash table
  * @ht: sorted hash table
  * @key: key to the data
  * @value: data to add
@@ -140,7 +144,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * shash_table_get - fucntion that retrieve a value from the hash table
+ * shash_table_get - fucntion that retrieve a value
+ * from the hash table
  * @ht: hash table
  * @key: key to the data
  *
